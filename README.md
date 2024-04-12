@@ -19,7 +19,7 @@ stored.
 5. Map the IP address with its MAC address and return the MAC address to client.
 P
 ## PROGRAM - ARP:
-### Client:
+### CLIENT:
 import socket   
 s=socket.socket()    
 s.bind(('localhost',8000))    
@@ -32,7 +32,7 @@ c.send(address[ip].encode())
 except KeyError:   
 c.send("Not Found".encode()) 
 
-### Server:
+### SERVER:
 import socket    
 s = socket.socket()    
 s.connect(('localhost',8000))    
@@ -41,14 +41,14 @@ ip = input("Enter logical address: ")
 s.send(ip.encode())    
 print("MAC Address",s.recv(1024).decode()) 
 ## OUPUT - ARP:
-### client:
+### CLIENT:
 ![Screenshot 2024-04-09 171431](https://github.com/23004513/2c.ARP_RARP_PROTOCOLS/assets/138973069/f29e2182-0d63-40e0-b953-0e7ec5749fca)
 
-### Server:
+### SERVER:
 ![Screenshot 2024-04-09 172010](https://github.com/23004513/2c.ARP_RARP_PROTOCOLS/assets/138973069/57768d61-b90b-4fa1-8709-ae97ecdc6e3b)
 
 ## PROGRAM - RARP:
-### Client:
+### CLIENT:
 import socket   
 s = socket.socket()    
 s.bind(('localhost',8000))   
@@ -62,7 +62,7 @@ c.send(address[ip].encode())
 except KeyError:    
 c.send("Not Found".encode())
 
-### Server:
+### SERVER:
 import socket   
 s = socket.socket()    
 s.connect(('localhost',8000))   
@@ -72,9 +72,10 @@ s.send(ip.encode())
 print("Logical Address",s.recv(1024).decode())
 
 ## OUPUT -RARP:
-### client:
+
+### CLIENT:
 ![Screenshot 2024-04-09 172725](https://github.com/23004513/2c.ARP_RARP_PROTOCOLS/assets/138973069/84b84a2b-9049-4d38-b8c4-4b518287dee3)
-### server:
+### SERVER:
 ![Screenshot 2024-04-09 173244](https://github.com/23004513/2c.ARP_RARP_PROTOCOLS/assets/138973069/1fb76e5a-b398-4253-8147-990588ced9c4)
 
 ## RESULT:
